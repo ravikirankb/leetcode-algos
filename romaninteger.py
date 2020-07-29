@@ -11,17 +11,13 @@ class Solution:
         
         result:int = 0
         prev: str =''
-        for c in list(s):
-            if prev == '':
-                prev = c
-                result += romandict[c]
-            else: 
-                if romandict[prev] < romandict[c]:
-                   result -= romandict[prev]
-                   result += romandict[c] - romandict[prev]
-                   prev = c
-                else:
-                   result += romandict[c]                
-                   prev = c
+        for c in list(s):            
+            if prev !='' and romandict[prev] < romandict[c]:
+               result -= romandict[prev]
+               result += romandict[c] - romandict[prev]                   
+            else:
+               result += romandict[c]                
+                
+            prev = c
             
         return result
