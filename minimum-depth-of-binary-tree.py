@@ -6,14 +6,12 @@ class Solution:
             return 0
         
         que = [(root,1)]
-        min_depth = float("inf")
         while que:
             cur_node,depth = que.pop(0)
             
             if cur_node and not cur_node.left and not cur_node.right:
               ## since the first found leaf is the minimum depth stop the loop and do not continue looking further nodes.
-               min_depth = min(min_depth,depth)
-               break
+               return depth
               
             if cur_node.left:
               que.append((cur_node.left,depth + 1))
@@ -21,5 +19,5 @@ class Solution:
               que.append((cur_node.right,depth + 1))
             
             
-        return min_depth
+        return 0
             
