@@ -21,3 +21,22 @@ class Solution:
             
         return 0
             
+        
+        
+## unique solution using inline recursion (not efficient :))
+
+class Solution:
+     def minDepth(self,root: TreeNode,depth =1) -> int:
+         if not root:
+            return 0
+        
+         if root and not root.right and not root.left:
+                return depth
+          
+         l_depth = self.minDepth(root.left,depth + 1)
+         r_depth = self.minDepth(root.right,depth + 1)
+        
+         if l_depth or r_depth:
+            return min(l_depth if l_depth else float("inf"),r_depth if r_depth else float("inf"))
+         else:
+            return depth
