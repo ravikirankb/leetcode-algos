@@ -10,5 +10,20 @@ class Solution:
             if n == target:
                 return [i+1,l+1]
                 
+                
+ class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        dict = {}
+        for i in range(0,len(numbers)):
+            m = target - numbers[i]
+            if m in dict:
+               return [dict[m]+1,i+1]
+            else:
+                dict[numbers[i]] = i
+                
+                
+                
+                
+             
         
              
