@@ -1,3 +1,4 @@
+## two pointer approach
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         i,l = 0,len(numbers)-1
@@ -9,8 +10,9 @@ class Solution:
                 l -= 1
             if n == target:
                 return [i+1,l+1]
-                
-                
+        
+        
+  ## using a dictionary.              
  class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         dict = {}
